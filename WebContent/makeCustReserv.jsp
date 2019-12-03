@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Dashboard</title>
+        <title>Make Customer Reservation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/customer_style.css">
@@ -30,12 +30,13 @@
                 <img src="./img/user.png" style="width: 70px; height: 70px; padding: 10px; margin: 10px;">
             </div>
           </div>
-
-        <div class="row">
-
-            <div class="column middle">
-                <div class="search">
+          <div class="cust_rep_dash">
+			<button class="button" onclick="window.location.href = 'customer_rep_dash.jsp';">Dashboard</button>
+           	<h1>Make a customer reservation</h1>
+           	<div class="search">
                     <form action="SearchFlights" method = "post">
+                    	<label style="font-size: 20px;" for="uname">Customer Username</label>
+                    	<input type="text" name="customerUser" placeholder="Customer Username">
                         <select name="trip" class="choose">
                             <option value="round-trip">Round Trip</option>
                             <option value="one-way">One Way</option>
@@ -94,9 +95,7 @@
 					</c:forEach>
 				</table>
 			</div>
-
-                </div>
-        </div>
+            </div>
 
 	<form method="Get" action="Logout">
 		<input type="submit" value="Logout" />

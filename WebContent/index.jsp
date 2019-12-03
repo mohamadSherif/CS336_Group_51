@@ -24,7 +24,10 @@
 				<br> <label style="font-size: 20px;" for="psw"><b>Password</b></label>
 				<br> <input class="input" type="password"
 					placeholder="Enter Password" name="password" required> <br>
-				<br><br>
+				<br>
+				<input type="radio" name="userType" value="customer" required>Customer<br>
+				<input type="radio" name="userType" value="custRep">Customer Rep<br>
+				<input type="radio" name="userType" value="admin">Admin<br><br>
 				<button type="submit" class="button">Log In</button>
 				<br />
 				<button onclick="window.location.href = 'register.jsp';"
