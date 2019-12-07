@@ -33,6 +33,17 @@
           <div class="cust_rep_dash">
 			<button class="button" onclick="window.location.href = 'customer_rep_dash.jsp';">Dashboard</button>
            	<h1>Edit a customer reservation</h1>
+           	
+			<form action="showReservation.jsp" method="post">
+				Ticket Number: <input type="text" name="ticketNum" maxlength=11 required/><br/>
+				Flight Number: <input type="text" name="flightNum" maxlength=11 required/><br/>
+				Airline Name: <input type="text" name=airlineName" required/><br/>
+				Depart Date: <input type="date" name="departDate" required/><br/>
+				Arrival Date: <input type="date" name="arriveDate" required/><br/>
+				<button type="submit" >Edit Reservation</button>
+			
+				
+			</form>
             </div>
 
 	<form method="Get" action="Logout">

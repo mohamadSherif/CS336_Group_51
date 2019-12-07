@@ -38,7 +38,7 @@ public class CheckRoundTrip extends HttpServlet {
 		if((Boolean) session.getAttribute("roundTrip")==true){
 			session.setAttribute("roundTrip", false);
 			ResultSet set = null;
-			ArrayList<Flight> list = new ArrayList<>();
+			ArrayList<Flight> list = new ArrayList<Flight>();
 			
 			ApplicationDB searchFlights = new ApplicationDB();
 			String[] airport = (String[]) session.getAttribute("airport");

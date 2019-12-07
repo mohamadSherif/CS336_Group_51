@@ -31,72 +31,77 @@
             </div>
           </div>
 
-        <div class="row">
+       <div class="row">
 
-            <div class="column middle">
-                <div class="search">
-                    <form action="SearchFlights" method = "post">
-                        <select name="trip" class="choose">
-                            <option value="round-trip">Round Trip</option>
-                            <option value="one-way">One Way</option>
-                        </select>
+		<div class="column middle">
+			<div class="search">
+				<form action="SearchFlights" method="post">
+					<select name="trip" class="choose">
+						<option value="one-way" selected>One Way</option>
+						<option value="round-trip">Round Trip</option>
+					</select> <select name="class" class="choose">
+						<option value="economy">Economy</option>
+						<option value="business">Business</option>
+						<option value="firstClass">First Class</option>
+					</select> </br> <input type="text" name="departAirport" placeholder="From">
+					<input type="text" name="arriveAirport" placeholder="To"> <input
+						type="date" name="departDate" placeholder="YYYY-MM-DD"> <input
+						type="date" name="arriveDate" placeholder="YYYY-MM-DD"> </br> <input
+						type="submit" value="submit"> </br>
 
-                        <select name="class" class="choose">
-                            <option value="economy">Economy</option>
-                            <option value="business">Business</option>
-                            <option value="firstClass">First Class</option>
-                        </select>
-                        </br>
-                        <input type="text" name="departAirport" placeholder="From">
-                        <input type="text" name="arriveAirport" placeholder="To">
-                        <input type="date" name="departDate" placeholder="YYYY-MM-DD">
-                        <input type="date" name="arriveDate" placeholder="YYYY-MM-DD">
-                    </br>
-                        <input type="submit" value="submit">
-                </br>
-                        
-                        </form>
-                </div>
-
-                <div class="filter">
-                    <select name="filter_price" class="choose" style="border-radius: 5px; margin-bottom:0px; margin-right: 25px;">
-                        <option value="">Sort by price</option>
-                        <option value="low2high">Low to high</option>
-                        <option value="high2low">High to low</option>
-                    </select>
-
-                    <select name="filter_stops" class="choose" 
-                    style="border-radius: 5px; margin-bottom:0px; margin-right: 45px;">
-                            <option value="">Sort by stops</option>
-                            <option value="low2high"> &lt; 2 </option>
-                            <option value="high2low"> &gt; 2</option>
-                        </select>
-                    
-                    <input type="text" name="filter_airline" placeholder="Filter by airline" style="margin: 0px;">
-                </div>
-                  
-                <div class="result_card">
-				<table>
-					
-					<c:forEach items="${list}" var="flight">
-						<tr>
-							<th>Flight Number</th>
-							<th>Airlines</th>
-							<th>Departure Time</th>
-							<th>Arrival Time</th>
-						</tr>
-						<tr>
-							<td>${flight.flightNumber}</td>
-							<td>${flight.airline_name}</td>
-							<td>${flight.departTime}</td>
-							<td>${flight.arriveTime}</td>
-						</tr>
-					</c:forEach>
-				</table>
+				</form>
 			</div>
 
-                </div>
-        </div>
+			<div class="filter">
+				<select name="filter_price" class="choose"
+					style="border-radius: 5px; margin-bottom: 0px; margin-right: 25px;">
+					<option value="">Sort by price</option>
+					<option value="low2high">Low to high</option>
+					<option value="high2low">High to low</option>
+				</select> <select name="filter_stops" class="choose"
+					style="border-radius: 5px; margin-bottom: 0px; margin-right: 45px;">
+					<option value="">Sort by stops</option>
+					<option value="low2high">&lt; 2</option>
+					<option value="high2low">&gt; 2</option>
+				</select> <input type="text" name="filter_airline"
+					placeholder="Filter by airline" style="margin: 0px;">
+			</div>
+
+			<div class="result_card">
+				<form action="CheckRoundTrip" method="POST">
+					<table>
+						<thead>
+							<tr>
+								<td width="10%">FLIGHT NUMBER</td>
+								<td width="30%">AIRLINES</td>
+								<td width="30%">DEPARTURE TIME</td>
+								<td width="20%">ARRIVAL TIME</td>
+							</tr>
+						</thead>
+
+						<tbody>
+
+							<c:forEach items="${list}" var="flight">
+								<tr>
+									<td align="left"><input type="text" name="flightNumber"
+										value="${flight.flightNumber}" readonly /></td>
+									<td align="left"><input type="text" name="airline"
+										value="${flight.airline_name}" readonly /></td>
+									<td align="left"><input type="text" name="departTime"
+										value="${flight.departTime}" readonly /></td>
+									<td align="left"><input type="text" name="arriveTime"
+										value="${flight.arriveTime}" readonly /></td>
+									<td align="center"><input type="submit" value="Select" />
+									</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</form>
+			</div>
+
+		</div>
+	</div>
 
 	<form method="Get" action="Logout">
 		<input type="submit" value="Logout" />

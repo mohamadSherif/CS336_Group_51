@@ -31,11 +31,25 @@
             </div>
           </div>
           <div class="cust_rep_dash">
-			<button class="button" onclick="window.location.href = 'customer_rep_dash.jsp';">Dashboard</button>
-            <button class="button" onclick="window.location.href = 'makeCustReserv.jsp';">Make Customer Reservation</button>
+			
+            <button class="button" onclick="window.location.href = 'makeCustReserv.jsp';">Make Customer Reservation</button><br/>
+            <form action="showReservation.jsp">
+			Reservation Number: <input type="text" name="resNum"/>
 			<button class="button" onclick="window.location.href = 'editCustReserv.jsp';">Edit Customer Reservation</button>
-			<button class="button" onclick="window.location.href = 'flightWaitList.jsp';">Flight Waiting List</button>
-			<button class="button" onclick="window.location.href = 'aafInformation.jsp';">Aircraft/Airport/Flight Information</button>
+			</form>
+			<form action="DeleteReservation">
+			Reservation Number: <input type="text" name="resNum"/>
+			<button type="submit">Delete Reservation</button>
+			</form>
+			<form action="waitlist.jsp">
+			Flight Number: <input type="text" name="flightNumber"/>
+			<button class="button" onclick="window.location.href = 'flightWaitList.jsp';">Flight Waiting List</button><br/><br/>
+			</form>
+			
+			<button class="button" onclick="window.location.href = 'addInfo.jsp';">Add Information</button>
+			<button class="button" onclick="window.location.href = 'editInfo.jsp';">Edit Information</button>
+			<button class="button" onclick="window.location.href = 'deleteInfo.jsp';">Delete Information</button><br/><br/>
+			
             </div>
 
 	<form method="Get" action="Logout">
